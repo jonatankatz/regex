@@ -41,7 +41,7 @@ DOM.password.addEventListener("input", function (event) {
     return raiseMessage(DOM.passwordMessage, "strong")
 })
 DOM.password.addEventListener("input" ,function (event){
-    isError.passwordMatchMessage = true;
+    isError.passwordMatch = true;
     resetErrors(DOM.passwordMatchMessage)
     let passwordMatch = document.querySelector("input[name=passwordMatch]").value
     const { value } = event.currentTarget
@@ -51,8 +51,8 @@ DOM.password.addEventListener("input" ,function (event){
     return raiseMessage(DOM.passwordMatchMessage, "Password Match")
 })
 
-DOM.passwordMatch.addEventListener("input", function (event) {
-    isError.passwordMatchMessage = true;
+DOM.passwordMatch.addEventListener("keyup", function (event) {
+    isError.passwordMatch = true;
     resetErrors(DOM.passwordMatchMessage)
     const { value } = event.currentTarget
     
@@ -65,14 +65,13 @@ DOM.passwordMatch.addEventListener("input", function (event) {
 })
 
 function validatePassword(input) {
-    console.log(input)
+    
     return passwordRegex.test(input)
 }
 
 function validatePasswordMatch(input) {
     let passwordInput = document.querySelector("input[name=password]")
     let password = passwordInput.value
-    console.log(password,input)
     if(password === input)return true
     } 
     
@@ -103,7 +102,7 @@ function validatePasswordMatch(input) {
 
 function buttonEnable() {
     let button = DOM.sendButton
-    console.log(button)
+    console.log(isError.userName,isError.password,isError.passwordMatch)
     if (!isError.userName && !isError.password && !isError.passwordMatch){
         if (button.disabled = "disabled")
        button.disabled = ""
