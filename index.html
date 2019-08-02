@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="height:200px;width:300px;text-align: center;margin:auto;border:1px solid black">
+        <form id="formValidation">
+            <div id="userName">
+                <span>Enter your email</span>
+                <br />
+                <div style="display:inline-block; margin-right: 5px;">
+                <input type="text" name="userName"  >
+                </div>
+                <div>
+                <span id="userNameMessage"> </span>
+            </div>
+            </div>
+
+            <div id="password">
+                <span>Password</span>
+                <br />
+                <input type="text" name="password" />
+                <br />
+                <span id="passwordMessage"> </span>
+            </div>
+            <div id="passwordMatch">
+                <span>Password Match</span>
+                <br />
+                <input type="text" name="passwordMatch" />
+                <br />
+                <span id="passwordMatchMessage"> </span>
+            </div>
+            <button type="button" id="send" disabled> Send </button>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
